@@ -1,0 +1,2 @@
+# GridTerminolgy
+Grid Terminology Overview
