@@ -1,0 +1,107 @@
+Css Grid
+
+Grid Terminology
+#########################
+
+	Grid container
+
+	Grid item - direct descendent in container
+
+	Grid line - line Hor. or Vert drawn within  a grid
+
+	Grid cell - any Cell consisting of two pairs of directly parrallel lines in the grid
+
+	Grid track - horizontal or ertical track
+
+	Grid area rectangular Area between four specified grid lines covering one or more cells
+
+	Grid gap Space BEtween Each of the Cells 
+
+#########################
+Example
+
+
+.site
+.masthead
+.page-title
+.main-content
+.sidebar
+.footer 
+
+<div class = "site">
+	<header class = "masthead">
+	</header>
+	
+	<h1 class="page-title">
+	</h1>
+	
+	<main class="main-content">
+	</main>
+
+	<aside class="sidebar">
+	</aside>
+
+	<footer class="footer">
+	</footer>
+
+</div><!-- .site -->
+
+_______________ CSS________________
+
+display: grid;
+
+grid-template-columns: 
+	2fr 1fr 1fr;
+
+grid-template-rows:
+	auto 1fr 3fr;
+
+grid-column: 2/4; 
+grid-row: 2/3;
+	applied to grid items. 
+	Defines the start and end grid lines 
+	from column line 2 to column line 4 and
+	from row 2 to row 3 ]
+
+___________________________________
+
+Combined
+#########################
+
+.site {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	grid-template-rows: auto 1fr 3fr;
+	grid-template-areas: 
+		"title title title"
+		"main header header"
+		"main sidebar footer"
+}
+
+.masthead{
+	grid-area: header ;
+	grid-column: 2/4; 
+	grid-row: 2/3;
+}
+.page-title{
+	grid-area: title;
+	grid-column: 1/4; 
+	grid-row: 1/2;
+}
+.main-content{
+	grid-area: main;
+	grid-column: 1/2; 
+	grid-row: 2/4;
+}
+
+/*etc etc*/
+
+#########################
+Backwards Compatibility
+
+@supports (display: grid) { ... }
+
+
+
+
+
